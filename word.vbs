@@ -1,4 +1,4 @@
-Sub Demo()
+Sub AutoOpen()
 ' main entry
     Dim fileURL As String, saveLocation As String
     Dim RetVal
