@@ -7,6 +7,8 @@ WARNING: Includes real ransomware (conti) which encrypts disk.
 * Download Agent
 https://www.elastic.co/downloads/past-releases/elastic-agent-7-10-2
 
-* Activate agent
+* Activate agent for demo
 .\elastic-agent.exe install -f --kibana-url=http://10.113.217.19:5601 --enrollment-token=dXNSTUszc0JxTG81MmRuWlJLc1E6dWVGVVNhcWpUaTJ6RmU0RlNSdU52dw== --insecure
 
+* if ransom doc needs updating recompress with password
+zip -e ransomNote.docm.zip ransomNote.docm
